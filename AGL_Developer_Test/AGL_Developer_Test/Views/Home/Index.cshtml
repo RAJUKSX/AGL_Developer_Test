@@ -1,0 +1,37 @@
+﻿@model List<AGL_Developer_Test.Models.Pet>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="col-lg-6">
+
+    <ul class="bs-component">
+        <h2>Cats by Owner's Gender</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Male</h3>
+            </div>
+            @foreach (var item in Model)
+            {
+                @if (item.OwnerGender == AGL_Developer_Test.Common.Constant.GENDER_MALE)
+                {
+                    <div class="panel-body">
+                        <div>@item.Name</div>
+                    </div>
+                }
+            }
+            <div class="panel-heading">
+                <h3 class="panel-title">Female</h3>
+            </div>
+            @foreach (var item in Model)
+            {
+                @if (item.OwnerGender == AGL_Developer_Test.Common.Constant.GENDER_FEMALE)
+                {
+                    <div class="panel-body">
+                        <div>@item.Name</div>
+                    </div>
+                }
+            }
+        </div>
+    </ul>
+</div>
